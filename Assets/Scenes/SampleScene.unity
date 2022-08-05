@@ -7104,6 +7104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1673546187}
+  _poolingListSO: {fileID: 11400000, guid: c65d941a4ecfafd4ab58dacd884edbe8, type: 2}
+  _cursorTexture: {fileID: 2800000, guid: 5be014eeb7187254fbfe1deb9410829c, type: 3}
 --- !u!4 &1184481797
 Transform:
   m_ObjectHideFlags: 0

@@ -60,7 +60,7 @@ public class Bullet : PoolAbleMono
         if(_timeToLive >= BulletDataSO.lifeTime)
         {
             _isDead = true;
-            Destroy(gameObject);
+            PoolManager.Instance.Push(this);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,7 +86,7 @@ public class Bullet : PoolAbleMono
             HitEnemy(collision);
         }
         _isDead = true;
-        Destroy(gameObject);
+        PoolManager.Instance.Push(this);
     }
 
     private void HitEnemy(Collider2D col)
