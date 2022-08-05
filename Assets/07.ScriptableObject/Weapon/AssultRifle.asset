@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0085a57eb9d10f24294ffb307cb261d2, type: 3}
+  m_Name: AssultRifle
+  m_EditorClassIdentifier: 
+  bulletDataSO: {fileID: 11400000, guid: 62d974e5fb9c63148b84c716eda29e04, type: 2}
+  ammoCapacity: 100
+  automaticFire: 0
+  weaponDelay: 0.1
+  spreadAngle: 5
+  _multiBulletShot: 0
+  _bulletCount: 1
+  reloadTime: 1
+  shootClip: {fileID: 8300000, guid: 72a86404271203946b90d8251a8f610c, type: 3}
+  outOfAmmoClip: {fileID: 8300000, guid: 55cb3d4025566154da40916c9e94bc26, type: 3}
+  reloadClip: {fileID: 8300000, guid: 7391441017ad6944f91a767ef2adac3e, type: 3}
