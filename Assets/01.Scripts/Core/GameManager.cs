@@ -19,5 +19,8 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Multiple GameManager is running");
         }
         Instance = this;
+
+        PoolManager.Instance = new PoolManager(transform);
+        //풀링 매니저에 풀링할 것을 만들어주는 작업
     }
 }
