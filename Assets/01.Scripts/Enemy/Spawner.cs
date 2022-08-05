@@ -57,7 +57,9 @@ public class Spawner : MonoBehaviour
             EnemyDataSO target = _spawnEnemies[index];
 
             Vector3 position = (Vector2)transform.position + Random.insideUnitCircle * _radius;
-            Enemy enemy = Instantiate(target.prefab, position, Quaternion.identity).GetComponent<Enemy>();
+            //Enemy enemy = Instantiate(target.prefab, position, Quaternion.identity).GetComponent<Enemy>();
+            Enemy enemy = PoolManager.Instance.Pop(target.prefab.name) as Enemy;
+            enemy.transform.SetPositionAndRotation(position, Quaternion.identity);
 
             enemy.Spawn();
         }
