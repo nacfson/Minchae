@@ -9,8 +9,13 @@ public class EnemyMeleeAttack : EnemyAttack
         if(_waitBeforeNextAttack ==false)
         {
             _enemyAIBrain.AIActionData.isAttack = true;
-
-            Debug.Log("»Ñ¼Å");
+            float range = _enemyAIBrain.Enemy.EnemyData.attackRange;
+            float distance = Vector2.Distance(_enemyAIBrain.BasePosition.position, _enemyAIBrain.Target.position);
+            if(distance < range)
+            {
+                IHittable hit = _enemyAIBrain.Target.GetComponent<IHittable>();
+                hit?.GetHit(damage, gameObject);
+            }
             AttackFeedBack?.Invoke();
             StartCoroutine(WaitBeforeAttackCoroutine());
         }

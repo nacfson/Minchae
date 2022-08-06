@@ -19,6 +19,8 @@ public class PopupText : PoolAbleMono
     {
         transform.position = pos;
         _textMesh.SetText(damageAmount.ToString());
+
+
         if (isCritical == true)
         {
             _textMesh.color = Color.red;
@@ -34,8 +36,7 @@ public class PopupText : PoolAbleMono
     private void ShowingSequence()
     {
         Sequence seq = DOTween.Sequence();
-        float ran = UnityEngine.Random.Range(-0.5f, 0.5f);
-        Vector3 targetPosition = transform.position + new Vector3(ran, 0,0);
+        Vector3 targetPosition = transform.position + new Vector3(0.5f, 0,0);
         seq.Append(transform.DOJump(targetPosition,1.5f,1,1f));
         seq.Join(_textMesh.DOFade(0, 1f));
         seq.AppendCallback(() => PoolManager.Instance.Push(this));

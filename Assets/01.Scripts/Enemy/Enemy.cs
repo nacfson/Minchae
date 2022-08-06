@@ -24,7 +24,7 @@ public class Enemy : PoolAbleMono, IHittable, IAgent
 
     protected bool _isDead = false;
     [SerializeField]
-    protected bool _isActive = false; //?????? ????? ??????? ?????? ????????.
+    protected bool _isActive = false; 
     protected EnemyAIBrain _brain;
     protected EnemyAttack _attack;
     protected CapsuleCollider2D _bodyCollider;
@@ -109,14 +109,19 @@ public class Enemy : PoolAbleMono, IHittable, IAgent
     {
         if (_isDead == true) return;
 
+        bool isCritical = GameManager.Instance.IsCritical;
+        if (isCritical)
+        {
+            damage = GameManager.Instance.GetCriticalDamage(damage);
+        }
 
         Health -= damage;
         HitPoint = damageDealer.transform.position;
 
-        bool isCritical = false;
+
 
         PopupText popupText = PoolManager.Instance.Pop("PopupText") as PopupText;
-        popupText?.Setup(damage,transform.position + new Vector3(0,0.3f), false, Color.white);
+        popupText?.Setup(damage,transform.position + new Vector3(0,0.3f), GameManager.Instance.IsCritical, Color.white);
 
         OnGetHit?.Invoke();
         if(Health <= 0)
