@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9fe8a9b3cd3b54e946daf80bd6bd87, type: 3}
   m_Name: AmmoData
   m_EditorClassIdentifier: 
-  rate: 0.3
+  rate: 3
   itemPrefab: {fileID: 2015818865579453120, guid: bee18a953f87c5046b53c98664f0f2ea, type: 3}
   resourceType: 2
   minAmount: 20
   maxAmount: 40
   useSound: {fileID: 8300000, guid: 7391441017ad6944f91a767ef2adac3e, type: 3}
-  popupTextColor: {r: 0.5754717, g: 0.25607467, b: 0, a: 0}
+  popupTextColor: {r: 0.5754717, g: 0.25607467, b: 0, a: 1}

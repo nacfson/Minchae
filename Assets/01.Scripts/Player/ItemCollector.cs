@@ -18,12 +18,15 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.layer == _resourceLayer)
         {
             Resource resource = collision.gameObject.GetComponent<Resource>();
-
             if (resource != null)
             {
                 switch (resource._resourceDataSO.resourceType)
                 {
                     case ResourceType.Ammo:
+                        int value2 = resource._resourceDataSO.GetAmount();
+                        _player.Health += value2;
+                        PopupText(value2, resource);
+                        resource.PickUpResource();
                         break;
                     case ResourceType.Health:
                         int value = resource._resourceDataSO.GetAmount();

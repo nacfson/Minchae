@@ -10,6 +10,8 @@ public class ItemDropper : MonoBehaviour
     private List<ResourcesDataSO> _dropTable;
     private float[] _itemWeights; //?????? ??????
 
+    
+
     [SerializeField]
     private float _dropPower = 2f;
     [SerializeField]
@@ -26,7 +28,7 @@ public class ItemDropper : MonoBehaviour
     public void Drop()
     {
         float dropVariable = Random.value; //0~1
-        if (dropVariable < _dropChance) //????????? ???
+        if (dropVariable < _dropChance)
         {
             int index = GetRandomItemIndex();
             Resource r = PoolManager.Instance.Pop(_dropTable[index].itemPrefab.name) as Resource;
