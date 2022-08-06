@@ -113,6 +113,11 @@ public class Enemy : PoolAbleMono, IHittable, IAgent
         Health -= damage;
         HitPoint = damageDealer.transform.position;
 
+        bool isCritical = false;
+
+        PopupText popupText = PoolManager.Instance.Pop("PopupText") as PopupText;
+        popupText?.Setup(damage,transform.position + new Vector3(0,0.3f), false, Color.white);
+
         OnGetHit?.Invoke();
         if(Health <= 0)
         {

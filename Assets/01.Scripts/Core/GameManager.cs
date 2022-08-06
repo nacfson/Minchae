@@ -15,6 +15,16 @@ public class GameManager : MonoBehaviour
 
 
 
+
+    [SerializeField] private float _criticalRate = 0.7f, _criticalMinDmg =1.5f,_criticalMaxDmg=2.5f;
+    public bool isCritical => Random.value < _criticalRate; //0~1 까지의 난수 
+
+    public int GetCriticalDamage(int dmg)
+    {
+        float ratio = Random.Range(_criticalMinDmg, _criticalMaxDmg);
+        dmg = Mathf.CeilToInt(ratio * (float)dmg);
+    }
+
     public Transform Player { get => _player; }
     private void Awake()
     {
