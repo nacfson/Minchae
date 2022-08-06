@@ -92,7 +92,7 @@ public class Bullet : PoolAbleMono
     private void HitEnemy(Collider2D col)
     {
         Vector2 randomOffset = Random.insideUnitCircle * 0.5f;
-        Impact impact = Instantiate(bulletDataSO.impactEnemyPrefab).GetComponent<Impact>();
+        Impact impact = PoolManager.Instance.Pop(bulletDataSO.impactEnemyPrefab.name).GetComponent<Impact>();
         Quaternion rot = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360f)));
         impact.SetPositionAndRotation(col.transform.position + (Vector3)randomOffset , rot);
         impact.SetScaleAndTime(Vector3.one * 0.7f, 0.2f);
@@ -103,8 +103,7 @@ public class Bullet : PoolAbleMono
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 10f);
         if(hit.collider != null)
         {
-
-            Impact impact = Instantiate(bulletDataSO.impactObstaclePrefab).GetComponent<Impact>();
+            Impact impact = PoolManager.Instance.Pop(bulletDataSO.impactObstaclePrefab.name) as Impact;
             Quaternion rot = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360f)));
             impact.SetPositionAndRotation(hit.point + (Vector2)transform.right * 0.5f, rot);
             impact.SetScaleAndTime(Vector3.one, 0.2f);
