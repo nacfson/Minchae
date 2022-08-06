@@ -24,12 +24,10 @@ public class ItemCollector : MonoBehaviour
                 switch (resource._resourceDataSO.resourceType)
                 {
                     case ResourceType.Ammo:
-                        //??? ???? ?? ????? ????.
                         break;
                     case ResourceType.Health:
                         int value = resource._resourceDataSO.GetAmount();
                         _player.Health += value;
-                        //??????? ????????
                         PopupText(value, resource);
                         resource.PickUpResource();
                         break;

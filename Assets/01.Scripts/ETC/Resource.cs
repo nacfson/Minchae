@@ -40,6 +40,6 @@ public class Resource : PoolAbleMono
     public override void Init()
     {
         _spritedRenderer.enabled = true;
-        _collider.enabled = false;
+        _collider.enabled = true;
     }
 }
