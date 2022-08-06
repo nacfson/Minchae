@@ -17,6 +17,7 @@ public class Player : MonoBehaviour, IHittable, IAgent
         set
         {
             _health = Mathf.Clamp(value, 0,_maxHealth);
+            OnUpdateHealthUI?.Invoke(_health);
         }
     }
     [SerializeField]

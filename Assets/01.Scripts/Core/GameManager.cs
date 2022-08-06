@@ -56,5 +56,30 @@ public class GameManager : MonoBehaviour
     {
         Cursor.SetCursor(_cursorTexture, new Vector2(_cursorTexture.width/2f, _cursorTexture.height/2f),CursorMode.Auto);
     }
-    
+
+    private float _nextGenerationTime = 0f;
+    [SerializeField]
+    private float _generateMinTime = 4f, _genterateMaxTime = 8f;
+
+    private int _spawnCount = 3;
+    private void Start()
+    {
+        StartCoroutine(GameLoop());
+    }
+
+    IEnumerator GameLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(_nextGenerationTime);
+            float posX = Random.Range(-4.5f, 4.5f);
+            float posY = Random.Range(-4f, 4f);
+            Spawner spawner = PoolManager.Instance.Pop("Spawner") as Spawner;
+            spawner.transform.position = new Vector3(posX, posY);
+            spawner.StartToSpawn(_spawnCount);
+            _spawnCount++;
+            _nextGenerationTime = Random.Range(_generateMinTime, _genterateMaxTime);
+
+        }
+    }
 }
