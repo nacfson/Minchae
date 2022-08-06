@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class HeartBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<HeartImage> _imageList = new List<HeartImage>();
+    private void Awake()
     {
-        
+        transform.GetComponentsInChildren<HeartImage>(_imageList); //순서대로 들어옴
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetHeartBar(int hp)
     {
-        
+        for(int i= 0; i< _imageList.Count; i++)
+        {
+            _imageList[i].SetHeartImage(i < hp);
+        }
     }
 }

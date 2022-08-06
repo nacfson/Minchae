@@ -7380,6 +7380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dd62b16b9955a46a246acb6e802204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heartImageSO: {fileID: 11400000, guid: 340dc515c2664fe4f91204faea388691, type: 2}
 --- !u!114 &1156238257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9240,6 +9241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dd62b16b9955a46a246acb6e802204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heartImageSO: {fileID: 11400000, guid: 340dc515c2664fe4f91204faea388691, type: 2}
 --- !u!114 &1539159654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9662,7 +9664,19 @@ MonoBehaviour:
         m_CallState: 2
   <OnUpdateHealthUI>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 405476961}
+        m_TargetAssemblyTypeName: HeartBar, Assembly-CSharp
+        m_MethodName: SetHeartBar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1751049144
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,6 +9727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dd62b16b9955a46a246acb6e802204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heartImageSO: {fileID: 11400000, guid: 340dc515c2664fe4f91204faea388691, type: 2}
 --- !u!114 &1751049147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10158,6 +10173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dd62b16b9955a46a246acb6e802204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heartImageSO: {fileID: 11400000, guid: 340dc515c2664fe4f91204faea388691, type: 2}
 --- !u!114 &1806963715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10578,6 +10594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dd62b16b9955a46a246acb6e802204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heartImageSO: {fileID: 11400000, guid: 340dc515c2664fe4f91204faea388691, type: 2}
 --- !u!114 &1989477636
 MonoBehaviour:
   m_ObjectHideFlags: 0
