@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
         SetCursorIcon();
         //풀링 매니저에 풀링할 것을 만들어주는 작업
     }
+
+
     private void CreatePool()
     {
         foreach(PoolingPair pp in _poolingListSO.list)
@@ -48,8 +50,11 @@ public class GameManager : MonoBehaviour
             PoolManager.Instance.CreatePool(pp.prefab, pp.poolCount);
         }
     }
+
+
     private void SetCursorIcon()
     {
         Cursor.SetCursor(_cursorTexture, new Vector2(_cursorTexture.width/2f, _cursorTexture.height/2f),CursorMode.Auto);
     }
+    
 }

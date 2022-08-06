@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class Spawner : MonoBehaviour
+public class Spawner : PoolAbleMono
 {
     [SerializeField]
     private List<EnemyDataSO> _spawnEnemies = null;
@@ -25,13 +25,6 @@ public class Spawner : MonoBehaviour
         _spawnLight.intensity = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P)) //????? ???
-        {
-            StartToSpawn(5);
-        }
-    }
 
     public void StartToSpawn(int count)
     {
@@ -68,8 +61,13 @@ public class Spawner : MonoBehaviour
             () => _spawnLight.intensity,
             x => _spawnLight.intensity = x,
             0,
-            2f);
+            2f).OnComplete(() => { PoolManager.Instance.Push(this); });
     }
+    public override void Init()
+    {
+        //do nothing
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
@@ -81,5 +79,7 @@ public class Spawner : MonoBehaviour
             Gizmos.color = Color.white;
         }
     }
+
+
 #endif
 }
