@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    #region ¹ß»ç°ü·Ã ·ÎÁ÷
+    #region ï¿½ß»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public UnityEvent OnShoot;
     public UnityEvent OnShootNoAmmo;
     public UnityEvent OnStopShooting;
@@ -14,14 +14,14 @@ public class Weapon : MonoBehaviour
     protected bool _delayCoroutine = false;
     #endregion
     [SerializeField] protected WeaponDataSO _weaponData;
-    [SerializeField] protected GameObject _muzzle; //ÃÑ±¸ À§Ä¡
-    [SerializeField] protected TrackedReference _shellEjectPos; //ÅºÇÇ »ý¼º ÁöÁ¡
+    [SerializeField] protected GameObject _muzzle; //ï¿½Ñ±ï¿½ ï¿½ï¿½Ä¡
+    [SerializeField] protected TrackedReference _shellEjectPos; //Åºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public WeaponDataSO WeaponData { get => _weaponData; }
 
-    #region Ammo °ü·Ã ÄÚµå
-    public UnityEvent<int> OnAmmoChange; //ÃÑ¾Ë º¯°æ½Ã ¹ß»ýÇÒ ÀÌº¥Æ®
-    [SerializeField] protected int _ammo; // ÇöÀç ÃÑ¾Ë ¼ö
+    #region Ammo ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
+    public UnityEvent<int> OnAmmoChange; //ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
+    [SerializeField] protected int _ammo; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ ï¿½ï¿½
     public int Ammo
     {
         get
@@ -53,9 +53,9 @@ public class Weapon : MonoBehaviour
         UseWeapon();
     }
 
-    private void UseWeapon()
+    public void UseWeapon()
     {
-        //¸¶¿ì½º Å¬¸¯Áß & ÃÑÀÇ µô·¹ÀÌ false => ¹ß»ç
+        //ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ï¿½ï¿½ & ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false => ï¿½ß»ï¿½
         if(_isShooting == true && _delayCoroutine == false)
         {
             if(Ammo > 0)
@@ -98,7 +98,7 @@ public class Weapon : MonoBehaviour
 
     private void ShootBullet()
     {
-        SpawnBullet(_muzzle.transform.position, CalculateAngle() , false); //false º¯°æ
+        SpawnBullet(_muzzle.transform.position, CalculateAngle() , false); //false ï¿½ï¿½ï¿½ï¿½
     }
     private Quaternion CalculateAngle()
     {

@@ -57,6 +57,7 @@ public class AgentInput : MonoBehaviour
         mousePos.z = 0;
         Vector2 mouseInWordPos = MainCam.ScreenToWorldPoint(mousePos);
         OnPointerPositionChanged?.Invoke(mouseInWordPos);
+        
     }
 
 

@@ -13,10 +13,10 @@ public class AgentRenderer : MonoBehaviour
     }
 
 
-    //ÀÌÁ¦ ÀÌ°É OnPointerPositionChange¿¡ ¿¬°á 
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ OnPointerPositionChangeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
     public void FaceDirection(Vector2 pointerInput)
     {
-        Vector3 direction = (Vector3)pointerInput - transform.position; //¸¶¿ì½º Æ÷ÀÎÅÍ¸¦ ÇâÇÑ Vector
+        Vector3 direction = (Vector3)pointerInput - transform.position; //ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Vector
         Vector3 result = Vector3.Cross(Vector2.up,direction); 
 
         _spriteRenderer.flipX = result.z > 0;

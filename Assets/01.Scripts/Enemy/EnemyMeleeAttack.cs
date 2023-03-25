@@ -6,7 +6,7 @@ public class EnemyMeleeAttack : EnemyAttack
 {
     public override void Attack(int damage)
     {
-        if(_waitBeforeNextAttack ==false)
+        if(_waitBeforeNextAttack == false)
         {
             _enemyAIBrain.AIActionData.isAttack = true;
             float range = _enemyAIBrain.Enemy.EnemyData.attackRange;

@@ -78,7 +78,6 @@ public class Enemy : PoolAbleMono, IHittable, IAgent
         _bodyCollider.enabled = true;
         _agentMovement.enabled = true;
         Health = _enemyData.maxHealth;
-
     }
     private void SetEnemyData()
     {

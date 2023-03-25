@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour, IHittable, IAgent
 {
-    #region Ã¼·Â °ü·Ã ºÎºÐ
+    #region Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
     [SerializeField]
     private int _maxHealth;
     public int Health
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour, IHittable, IAgent
         set
         {
             _health = Mathf.Clamp(value, 0,_maxHealth);
-            OnUpdateHealthUI?.Invoke(_health);
+//            OnUpdateHealthUI?.Invoke(_health);
         }
     }
     [SerializeField]

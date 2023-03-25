@@ -5,8 +5,8 @@ using UnityEngine;
 public class Pool<T> where T : PoolAbleMono
 {
     private Stack<T> _pool = new Stack<T>();
-    private T _prefab; //¿À¸®Áö³¯ ÇÁ¸®ÆÕÀ» ÀúÀå
-    private Transform _parent; //ºÎ¸ð ÀúÀå
+    private T _prefab; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private Transform _parent; //ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public Pool(T prefab, Transform parent, int count = 10)
     {
@@ -44,7 +44,7 @@ public class Pool<T> where T : PoolAbleMono
         {
             T obj = GameObject.Instantiate(prefab, parent);
             obj.gameObject.name = obj.gameObject.name.Replace("(Clone)", "");
-            //clone ÀÌ¶ó´Â ÀÌ¸§À» °ø¹éÀ» Á¦°Å
+            //clone ï¿½Ì¶ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             obj.gameObject.SetActive(false);
             _pool.Push(obj);
         }
